@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Auto complete without jquery</title>
+		<link rel="stylesheet"  href="css/autocomplete.css">
+		<script src="js/autocomplete.js"></script>
+		<script src="data/tz.js"></script>
+	</head>
+	<body style="padding:10px;">
+		<div style="padding:100px;">
+			Auto complete without jquery sample
+		</div>
+		<div id="autocomplete" style="width: 500px;">
+		</div>
+		<button id="result_button">Show Result</button>
+		<table id="result_table" style="border:1px solid black;margin-top:10px;text-align:center;">
+		</table>
+	</body>
+	<script>
+		window.onload = function(){
+			/** generate sample data from timezone **/
+			var data = [];	
+			for(var i in tz){	
+				for(var j = 0, len = tz[i].length; j < len ; j++){
+					var itm = tz[i][j];
+					var s = itm.city;
+					data.push({name: s, value: itm.cc});
+				}
+			}
+			
+			//initialize
+			ac = new autocomplete('autocomplete', data);
+			
+			document.getElementById('result_button').addEventListener("click", function(){
+				
+				/** get result **/
+				ac.hideSelector();
+				var resultArray = ac.getResult();
+				var innerhtml = "<tr><th>NAME</th><th>VALUE</th></tr>";
+				for(var i = 0 ; i < resultArray.length ; i++)
+				{
+					innerhtml += "<tr><td>" + resultArray[i].name + "</td><td>" + resultArray[i].value + "</td></tr>";
+				}
+				document.getElementById('result_table').innerHTML = innerhtml;
+			}, false);
+		}
+	</script>
+</html>

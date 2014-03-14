@@ -1,0 +1,102 @@
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td{
+	margin: 0;
+	padding: 0;
+}
+
+.auto-complete{
+	border: 1px solid black;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 13px;
+	zoom: 1;
+	-webkit-user-select: none;
+	font-size: 100%;
+	cursor: text;
+}
+
+.auto-complete .tag-cover{
+	position: relative;
+	overflow: hidden;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tag-cover li{
+	list-style: none;
+	float:left;
+}
+
+.tag-cover .chosen-tag{
+	position: relative;
+	margin: 3px 0 3px 5px;
+	padding: 3px 20px 3px 5px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	background-color: #e4e4e4;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+	background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+	background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+	background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+	background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+	background-clip: padding-box;
+	box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+	color: #333;
+	line-height: 13px;
+	cursor: default;
+}
+
+.tag-cover .chosen-tag .chosen-close{
+	position: absolute;
+	top: 4px;
+	right: 3px;
+	display: block;
+	width: 12px;
+	height: 12px;
+	background: url('images/chosen-sprite.png') -42px 1px no-repeat;
+	font-size: 1px;
+	cursor: pointer;
+}
+.tag-cover .chosen-tag .chosen-close:hover{
+	background: url('images/chosen-sprite.png') -42px -10px no-repeat;
+}
+
+
+.tag-cover li input{
+	margin: 1px 0;
+	padding: 5px;
+	height: 15px;
+	outline: 0;
+	border: 0 !important;
+	background: transparent !important;
+	box-shadow: none;
+	color: #666;
+	font-size: 100%;
+	font-family: sans-serif;
+	line-height: normal;
+	border-radius: 0;
+}
+
+.auto-complete .chosen-selector{
+	position:absolute;
+	height: 100px;
+	border: 1px solid black;
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 99%;
+	cursor: pointer;
+	background-color:white;
+}
+
+.chosen-selector li{
+	margin: 0;
+	padding: 5px 6px;
+	list-style: none;
+	line-height: 15px;
+}
+
+.chosen-selector .chosen{
+	background-color:rgb(0, 214, 255);
+}
